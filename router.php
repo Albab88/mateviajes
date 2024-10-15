@@ -11,7 +11,6 @@ if (!empty($_GET['action'])) {
     $action = $_GET['action'];  
 }
 
-
 $params = explode('/', $action); 
 
 $viajescontroller = new ViajesController();
@@ -21,10 +20,9 @@ $usuarioscontroller = new UsuariosController();
 switch ($params[0]) {
     case 'home':
         $viajescontroller->LoadIndex();
-        break;  
+        break;
     
     default:
-        
         ?><img src="img/404.jpg" alt="..."><?php
         break;
 }
