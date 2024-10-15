@@ -1,4 +1,4 @@
-
+{include file="header.tpl"}
 
     <section>
         <table class="table table-striped">
@@ -39,3 +39,4 @@
         </table>
     </section>
 
+    {include file="footer.tpl"}
