@@ -18,7 +18,9 @@ $vehiculoscontroller = new VehiculosController();
 $usuarioscontroller = new UsuariosController();
 
 switch ($params[0]) {
-    
+    case 'home':
+        $viajescontroller->LoadIndex();
+        break;
     
     case 'vehiculos':
         $vehiculoscontroller->showFlota();
