@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-09-2024 a las 21:48:50
+-- Tiempo de generación: 22-09-2024 a las 00:56:45
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 
 --
 -- Base de datos: `db_mateviajes`
---
+-- 
 
 -- --------------------------------------------------------
 

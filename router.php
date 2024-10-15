@@ -25,6 +25,19 @@ switch ($params[0]) {
     case 'vehiculos':
         $vehiculoscontroller->showFlota();
         break;
+
+    case 'nuevovehiculo':
+        $vehiculoscontroller->formVehiculo();
+    break;
+    
+    case 'agregarvehiculo':
+        $vehiculoscontroller->agregarVehiculo();
+    break;
+    
+    case 'deleteVehiculolById':
+        $id_vehiculo = $params[1];
+        $vehiculoscontroller->borrarVehiculo($id_vehiculo);
+        break;
     
     default:
         ?><img src="img/404.jpg" alt="..."><?php
