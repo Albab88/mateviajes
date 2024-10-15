@@ -1,0 +1,32 @@
+.viajes {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 25px;
+}
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.viaje-image {
+    max-height: 500px;
+    width: 100%;
+    object-fit: cover;
+}
+.footer{
+    margin-top: 20px;
+    background-color:rgb(105, 38, 38);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+@media only screen and (min-width: 600px){
+
+.viajes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 25px;
+}
+
+}
