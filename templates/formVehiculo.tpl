@@ -33,6 +33,6 @@
     </form>
 </div>
 {else}
-    <p>No tienes permiso para acceder a esta página.</p>
+    <h4 class="alert alert-info">No tienes permiso para acceder a esta página.</h4>
 {/if}
 {include file="footer.tpl"}

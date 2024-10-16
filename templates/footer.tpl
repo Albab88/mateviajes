@@ -1,8 +1,6 @@
 
 <div class="footer">
-    <div class="col text-end">
-    </div>
-    <div class="col text-start">
+    <div class="col1">
         <h5>Mate y Viajes - La mezcla perfecta</h5>
         <p>Contacto:</p>
         <p>Teléfono: 2494-534432
@@ -12,8 +10,8 @@
         <p>WEBII - TUDAI<br>
         2024 Rauch</p>
     </div>
-    <div class="col text-end">
-    <img src="img/Logo.jpg" class="img-fluid" alt="...">
+    <div class="col2">
+    <img src="img/Logo.jpg" class="img-fluid align-items-center" alt="...">
 </div>
 </body>
 <script src="js/bootstrap.bundle.min.js"></script>

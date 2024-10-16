@@ -8,7 +8,7 @@
         <div class="mb-3">
             <input type="text" name="id" id="disabledTextInput" class="form-control" value="{$viaje->id}"
                 hidden />
-            <label for="destino" class="form-label">Destinos</label>
+            <label for="destino" class="form-label">Destino</label>
             <select name="destino" id="disabledSelect" class="form-select" required>
                 <option value="{$viaje->destino}">{$viaje->destino}</option>
                 <option value="Cafayate">Cafayate</option>
@@ -50,7 +50,7 @@
                 required />
         </div>
         <div class="mb-3">
-            <label for="horario" class="form-label">Horarios de salida</label>
+            <label for="horario" class="form-label">Horario de salida</label>
             <input type="time" name="horario" id="disabledTextInput" class="form-control" value="{$viaje->horario}" required />
             </div>
         <div class= "mb-3">
@@ -69,7 +69,7 @@
     </form>
 </div>
 {else}
-    <p>No tienes permiso para acceder a esta página.</p>
+    <h4 class="alert alert-info">No tienes permiso para acceder a esta página.</h4>
 {/if}
 
 
