@@ -6,12 +6,12 @@
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
-$action = 'home'; 
+$action = 'home';
 if (!empty($_GET['action'])) {
-    $action = $_GET['action'];  
+    $action = $_GET['action'];
 }
 
-$params = explode('/', $action); 
+$params = explode('/', $action);
 
 $viajescontroller = new ViajesController();
 $vehiculoscontroller = new VehiculosController();
@@ -24,15 +24,15 @@ switch ($params[0]) {
     
     case 'vehiculos':
         $vehiculoscontroller->showFlota();
-        break;
+    break;
 
     case 'login':
         $usuarioscontroller->logIn();
-        break;
+    break;
     
     case 'autenticar':
         $usuarioscontroller->autenticar();
-        break;
+    break;
         
     case 'nuevovehiculo':
         $vehiculoscontroller->formVehiculo();
@@ -45,7 +45,7 @@ switch ($params[0]) {
     case 'deleteVehiculolById':
         $id_vehiculo = $params[1];
         $vehiculoscontroller->borrarVehiculo($id_vehiculo);
-        break;
+    break;
     
     case 'nuevoviaje':
         $viajescontroller->formViaje();
@@ -54,6 +54,21 @@ switch ($params[0]) {
     case 'agregarviaje':
         $viajescontroller->agregarViaje();
     break;
+
+    case 'eliminarViaje':
+        $id_destino = $params[1];
+        $viajescontroller->borrarDestino($id_destino);
+        break;
+
+    case 'formEditViaje':
+        $id_destino = $params[1];
+        $viajescontroller->editarDestino($id_destino);
+        break;
+    
+    case 'modificarViaje':
+            $viajescontroller->modificarViaje();
+        break;
+        
     
     default:
         ?><img src="img/404.jpg" alt="..."><?php
