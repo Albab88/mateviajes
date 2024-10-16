@@ -54,14 +54,11 @@ class ViajesController {
     }
 
     public function editarDestino($id_destino){
-        if ($this->usercontroller->checkLogged()) {
-            $viaje = $this->modelViajes->getViajeById($id_destino);
-            $vehiculos= $this->modelVehiculos->getVehiculos();
-            $vehiculo= $this->modelVehiculos->getVehiculoById($viaje->fk_vehiculo);
-            $this->view->formEdicionViaje($viaje,$vehiculo, $vehiculos, $userLogged);
-        } else {
-            header('Location: ' . BASE_URL . 'login');
-        }
+        $userLogged = $this->usercontroller->checkLogged();
+        $viaje = $this->modelViajes->getViajeById($id_destino);
+        $vehiculos= $this->modelVehiculos->getVehiculos();
+        $vehiculo= $this->modelVehiculos->getVehiculoById($viaje->fk_vehiculo);
+        $this->view->formEdicionViaje($viaje,$vehiculo, $vehiculos, $userLogged);
     }
 
     public function modificarViaje(){
