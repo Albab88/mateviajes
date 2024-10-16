@@ -17,4 +17,38 @@ class UsuariosController {
         $this->view->showLogin();
     }
 
+    public function autenticar () {
+
+        $user = $_POST['usuario'];
+        $password = $_POST['password'];
+        
+        $userDB = $this->model->getUsuario($user);
+        //Si el usuario existe y las contraseñas coinciden
+        
+        if($userDB && password_verify($password,($userDB->password))){
+            session_start();
+            $_SESSION["logueado"] = true;
+            $_SESSION["userLogged"] = $user;
+            header ('Location:'.'home');
+        }else{
+            $this->view->showLogin("El usuario o la contraseña no existe.");
+        }
+    }
+
+    public function checkLogged(){
+        session_start();
+        if (isset($_SESSION["logueado"])) {
+            return true;
+        }else{
+            return false;
+            }
+    }
+
+    public function logOut () {
+        session_start();
+        session_destroy();
+
+        header('Location: '.'home');
+    }
+
 }

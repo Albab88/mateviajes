@@ -18,10 +18,11 @@ $vehiculoscontroller = new VehiculosController();
 $usuarioscontroller = new UsuariosController();
 
 switch ($params[0]) {
+
     case 'home':
         $viajescontroller->LoadIndex();
         break;
-    
+
     case 'vehiculos':
         $vehiculoscontroller->showFlota();
     break;
@@ -29,24 +30,37 @@ switch ($params[0]) {
     case 'login':
         $usuarioscontroller->logIn();
     break;
-    
+
     case 'autenticar':
         $usuarioscontroller->autenticar();
     break;
-        
+
+    case 'logOut':
+        $usuarioscontroller->logOut();
+        break;
+
     case 'nuevovehiculo':
         $vehiculoscontroller->formVehiculo();
     break;
-    
+
     case 'agregarvehiculo':
         $vehiculoscontroller->agregarVehiculo();
     break;
-    
+
     case 'deleteVehiculolById':
         $id_vehiculo = $params[1];
         $vehiculoscontroller->borrarVehiculo($id_vehiculo);
     break;
-    
+
+    case 'formEditVehiculo':
+        $id_vehiculo = $params[1];
+        $vehiculoscontroller->editarVehiculo($id_vehiculo);
+    break;
+
+    case 'editarVehiculo':
+        $vehiculoscontroller->modificarVehiculo();
+    break;
+
     case 'nuevoviaje':
         $viajescontroller->formViaje();
     break;
@@ -68,7 +82,6 @@ switch ($params[0]) {
     case 'modificarViaje':
             $viajescontroller->modificarViaje();
         break;
-        
     
     default:
         ?><img src="img/404.jpg" alt="..."><?php
