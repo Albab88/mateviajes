@@ -13,4 +13,18 @@
     
         return $destinos;
     }
+
+    public function crearviaje($destino, $fecha, $horario, $pasajeros, $vehiculo, $info){
+        $pdo = $this->crearConexion();
+        
+        $sql = 'INSERT INTO viajes (destino, fecha, horario, pasajeros, fk_vehiculo, descripcion) 
+                VALUES (?,?,?,?,?,?)';
+
+        $query = $pdo->prepare($sql);
+        try {
+            $query->execute([$destino, $fecha, $horario, $pasajeros, $vehiculo, $info]);
+        } catch (\Throwable $th) {
+            return null;
+        }
+    }
 }

@@ -14,4 +14,10 @@ class ViajesView {
         $this->smarty->assign('destinos', $destinos);
         $this->smarty->display('home.tpl');
     }
+
+    public function showFormViaje($vehiculos, $userLogged){
+        $this->smarty->assign('userLogged', $userLogged);
+        $this->smarty->assign('vehiculos', $vehiculos);
+        $this->smarty->display('formViajes.tpl');
+    }
 }

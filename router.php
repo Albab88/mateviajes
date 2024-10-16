@@ -26,6 +26,14 @@ switch ($params[0]) {
         $vehiculoscontroller->showFlota();
         break;
 
+    case 'login':
+        $usuarioscontroller->logIn();
+        break;
+    
+    case 'autenticar':
+        $usuarioscontroller->autenticar();
+        break;
+        
     case 'nuevovehiculo':
         $vehiculoscontroller->formVehiculo();
     break;
@@ -38,6 +46,14 @@ switch ($params[0]) {
         $id_vehiculo = $params[1];
         $vehiculoscontroller->borrarVehiculo($id_vehiculo);
         break;
+    
+    case 'nuevoviaje':
+        $viajescontroller->formViaje();
+    break;
+
+    case 'agregarviaje':
+        $viajescontroller->agregarViaje();
+    break;
     
     default:
         ?><img src="img/404.jpg" alt="..."><?php

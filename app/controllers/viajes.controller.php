@@ -22,4 +22,29 @@ class ViajesController {
         $userLogged= $this->usercontroller->checkLogged();
         $this->view->showHome($destinos, $userLogged);
     }
+
+    public function formViaje(){
+        $userLogged = $this->usercontroller->checkLogged();
+        $vehiculos= $this->modelVehiculos->getVehiculos();
+        $this->view->showFormViaje($vehiculos, $userLogged);
+    }
+
+    public function agregarViaje(){
+        //Obtener todos los datos del formulario
+        if ($this->usercontroller->checkLogged()) {
+            $destino = $_REQUEST['destino'];
+            $fecha = $_REQUEST['fecha'];
+            $horario = $_REQUEST['horario'];
+            $pasajeros = $_REQUEST['lugares'];
+            $vehiculo = $_REQUEST['vehiculo'];
+            $info = $_REQUEST['datos'];
+            //Pasarle al model todos los datos
+            $this->modelViajes->crearviaje($destino, $fecha, $horario, $pasajeros, $vehiculo, $info);
+
+            //Redirección
+            header('Location: ' . BASE_URL . 'home');
+        } else {
+            header('Location: ' . BASE_URL . 'login');
+        }
+    }
 }
