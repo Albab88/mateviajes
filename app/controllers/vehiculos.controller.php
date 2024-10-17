@@ -26,17 +26,17 @@ class VehiculosController {
     }
 
     public function agregarVehiculo(){
-        $this->usercontroller->checkLogged();
-        
+        if($this->usercontroller->checkLogged()){
         $marca = $_REQUEST['marca'];
         $modelo = $_REQUEST['modelo'];
         $anio = $_REQUEST['anio'];
         $patente = $_REQUEST['patente'];
         $asientos = $_REQUEST['asientos'];
-
         $this->model->crearvehiculo($marca, $modelo, $anio, $patente, $asientos);
-
         header('Location: ' . BASE_URL . 'vehiculos');
+        }else{
+            header('Location: ' . BASE_URL . 'login');
+        }
     }
 
     public function borrarVehiculo($id_vehiculo){
@@ -54,19 +54,18 @@ class VehiculosController {
             $this->view->formEdicionVehiculo($vehiculo,$userLogged);
     }
 
-    
     public function modificarVehiculo(){
-        $this->usercontroller->checkLogged();
+        if($this->usercontroller->checkLogged()){
         $id = $_REQUEST['id'];
         $marca = $_REQUEST['marca'];
         $modelo = $_REQUEST['modelo'];
         $anio = $_REQUEST['anio'];
         $patente = $_REQUEST['patente'];
         $asientos = $_REQUEST['asientos'];
-
         $this->model->updateVehiculo($marca, $modelo, $anio, $patente, $asientos, $id);
-        
         header('Location: ' . BASE_URL . 'vehiculos');
+        }else{
+            header('Location: ' . BASE_URL . 'vehiculos');
+        }
     }
-
 }
