@@ -50,7 +50,7 @@ class Model{
                 -- https://www.phpmyadmin.net/
                 --
                 -- Servidor: 127.0.0.1
-                -- Tiempo de generación: 13-10-2024 a las 01:55:10
+                -- Tiempo de generación: 17-10-2024 a las 02:16:45
                 -- Versión del servidor: 10.4.32-MariaDB
                 -- Versión de PHP: 8.2.12
 
@@ -109,9 +109,9 @@ class Model{
                 INSERT INTO `vehiculos` (`id`, `marca`, `modelo`, `patente`, `anio`, `asientos`) VALUES
                 (1, 'Ford', 'Transit', 'DUG111', 2001, 16),
                 (2, 'Mercedes Benz', 'Sprinter', 'GTO243', 2008, 17),
-                (3, 'Mercedez Bens', 'Sprinter', 'AA738AO', 2016, 20),
+                (3, 'Mercedes Benz', 'Sprinter', 'AA738AO', 2016, 20),
                 (4, 'Fiat', 'Ducato', 'AB287AI', 2018, 20),
-                (5, 'Mercedez Bens', 'Marcopolo', 'AC111AA', 2018, 37),
+                (5, 'Mercedes Benz', 'Marcopolo', 'AC111AA', 2018, 37),
                 (6, 'Scania', 'K280', 'AD876HS', 2021, 50),
                 (7, 'Scania', 'k230', 'NDF234', 2015, 48),
                 (13, 'Ford', 'Cargo', 'AA456SS', 2016, 50);
@@ -137,15 +137,14 @@ class Model{
                 --
 
                 INSERT INTO `viajes` (`id`, `destino`, `fecha`, `horario`, `pasajeros`, `fk_vehiculo`, `descripcion`) VALUES
-                (1, 'Tandil', '2024-12-05', '08:00:00', 15, 1, '¡Escapate a Tandil por 3 días y disfrutá de la tranquilidad de la sierra! Te ofrecemos un paquete completo con alojamiento, desayuno y visitas guiadas a los principales atractivos de la ciudad. Descubrí la Piedra Movediza, el Cristo de las Sierras y la exquisita gastronomía local. ¡No te lo pierdas, reservá ahora tu lugar para una experiencia inolvidable!'),
-                (2, 'Tandil', '2024-11-22', '09:00:00', 16, 3, 'Viví una escapada única de 2 días en Tandil, donde explorarás maravillas naturales como el Centinela, la famosa Piedra Movediza y la encantadora Sierra de las Ánimas. Disfrutá de paisajes impresionantes y sumergite en la tranquilidad de la sierra, con alojamiento incluido. ¡No te pierdas esta oportunidad de desconectar y descubrir lo mejor de Tandil en solo dos días!'),
                 (3, 'Tigre', '2024-11-30', '07:00:00', 34, 5, 'Disfrutá de un día inolvidable en Tigre. Te llevamos a recorrer el Delta en una relajante navegación, con vistas increíbles y paradas en islas emblemáticas. Además, incluimos almuerzo y tiempo libre para explorar el famoso Puerto de Frutos. ¡Vení a vivir una experiencia única en Tigre, ideal para desconectar en un solo día!'),
                 (4, 'Mar del Plata', '2025-01-11', '07:00:00', 48, 6, 'Pasá un día espectacular en Mar del Plata, disfrutando de sus playas, gastronomía y ambiente costero. Te ofrecemos un viaje con traslados cómodos, tiempo libre para recorrer el centro, el puerto y los principales puntos turísticos. Relajate bajo el sol o descubrí la magia de la ciudad junto al mar. ¡No te pierdas esta escapada ideal para desconectar y disfrutar al máximo en un solo día!'),
-                (5, 'Mar del Plata', '2025-01-18', '07:00:00', 48, 6, 'Pasá un día espectacular en Mar del Plata, disfrutando de sus playas, gastronomía y ambiente costero. Te ofrecemos un viaje con traslados cómodos, tiempo libre para recorrer el centro, el puerto y los principales puntos turísticos. Relajate bajo el sol o descubrí la magia de la ciudad junto al mar. ¡No te pierdas esta escapada ideal para desconectar y disfrutar al máximo en un solo día!'),
-                (7, 'Córdoba', '2024-11-14', '12:00:00', 12, 2, 'Te proponemos un viaje de 5 días a Córdoba, donde podrás disfrutar de sus imponentes sierras, ríos cristalinos y encantadores pueblos serranos como La Cumbrecita. Relajate en plena naturaleza, saboreá su deliciosa gastronomía local y desconectate del estrés. ¡Una experiencia inolvidable para recargar energías y disfrutar al máximo!\r\n'),
-                (9, 'Ruinas de San Ignacio', '2024-11-15', '09:30:00', 20, 3, '¡Vive 15 días en las históricas Ruinas de San Ignacio! Explora las misiones jesuíticas rodeadas de selva, con recorridos guiados llenos de historia. Disfruta de la naturaleza exuberante, relájate en un entorno tranquilo y visita las cercanas Cataratas del Iguazú. Una combinación perfecta de cultura, aventura y paisajes increíbles.'),
-                (10, 'El Bolsón', '2024-10-25', '12:45:00', 37, 5, ''),
-                (11, 'La Plata', '7654-08-09', '08:59:00', 16, 1, 'kjhbgv bnm,l');
+                (12, 'Glaciar Perito Moreno', '2024-11-30', '12:30:00', 18, 3, 'Explorá la majestuosidad del Glaciar Perito Moreno y sus alrededores en un viaje inolvidable de 8 días. Te ofrecemos un recorrido completo con visitas a los paisajes más impresionantes de la Patagonia, incluyendo el Parque Nacional Los Glaciares, el Lago Argentino y navegaciones por los canales. Disfrutá de la comodidad del alojamiento y las excursiones guiadas que te conectarán con la naturaleza en su máxima expresión. ¡Viví una aventura única en uno de los destinos más espectaculares del mundo!'),
+                (13, 'Mar del Plata', '2025-01-17', '07:30:00', 50, 13, 'Disfrutá de una escapada de 3 días a Mar del Plata, la ciudad balnearia más famosa del país. Relajate en sus playas, disfrutá de su vibrante vida nocturna y recorré sus puntos turísticos como el Puerto, el Torreón y la Rambla. Incluimos alojamiento con desayuno y tiempo libre para que vivas la ciudad a tu ritmo. ¡No te pierdas esta oportunidad de desconectar y disfrutar de la costa en su máxima expresión!'),
+                (14, 'Cataratas de Iguazú', '2025-07-07', '10:00:00', 20, 3, 'Descubrí la maravilla natural de las Cataratas del Iguazú en un viaje de 7 días lleno de aventura y paisajes impactantes. Te ofrecemos un paquete completo con alojamiento, traslados y visitas guiadas a ambos lados del Parque Nacional, argentino y brasileño. Además, disfrutá de excursiones a la Garganta del Diablo, paseos en lancha y caminatas por la selva. ¡Sumergite en la naturaleza y viví una experiencia inolvidable en las Cataratas!'),
+                (15, 'La Plata', '2024-11-18', '05:30:00', 37, 5, 'Descubrí La Plata en un increíble viaje de 1 día, explorando sus principales atractivos históricos y culturales. Visitá la majestuosa Catedral, el fascinante Museo de Ciencias Naturales y el imponente Paseo del Bosque. Con traslados cómodos y tiempo libre para disfrutar de la ciudad, esta escapada es ideal para sumergirte en la arquitectura y cultura de la capital bonaerense. ¡No te lo pierdas y reservá tu lugar hoy!'),
+                (16, 'Mendoza', '2025-05-15', '06:00:00', 50, 6, 'Descubrí Mendoza en un viaje de 7 días lleno de paisajes, vino y aventura. Visitá sus famosas bodegas con degustaciones exclusivas, recorriendo los viñedos que hacen de esta región un ícono mundial. Además, explorá la imponente Cordillera de los Andes, con excursiones a sitios como el Aconcagua y el Cañón del Atuel. ¡Sumate a esta experiencia única y disfrutá lo mejor de Mendoza con todo incluido!'),
+                (17, 'El Chaltén', '2025-03-22', '13:00:00', 20, 4, 'Recibí el otoño en El Chaltén con un viaje de 5 días, rodeado de paisajes patagónicos que se visten de colores cálidos. Caminá entre montañas, glaciares y lagunas mientras disfrutás del cambio de estación en un entorno mágico. El paquete incluye alojamiento, excursiones guiadas y tiempo libre para conectar con la naturaleza. ¡No te pierdas esta oportunidad de vivir el otoño en la capital del trekking argentino!');
 
                 --
                 -- Índices para tablas volcadas
@@ -190,7 +189,7 @@ class Model{
                 -- AUTO_INCREMENT de la tabla `viajes`
                 --
                 ALTER TABLE `viajes`
-                MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+                MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
                 --
                 -- Restricciones para tablas volcadas
@@ -206,6 +205,7 @@ class Model{
                 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
                 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
                 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
                 ";
         $this->db->query($sql);
