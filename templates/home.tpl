@@ -21,6 +21,7 @@
             <div class="collapse" id="collapse{$destino->id}" style="">
               <div class="card card-body">
                 <p>{$destino->descripcion}</p>
+                <h6>Un viaje para {$destino->pasajeros} pasajeros.</h6>
                 <h6>Salimos a las: {$destino->horario|date_format:"%H:%M"} hs.</h6>
               </div>
             </div>
