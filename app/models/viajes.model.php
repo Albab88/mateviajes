@@ -1,9 +1,10 @@
 <?php
-    require_once('model.php');
+
+require_once('model.php');
 
 class ViajesModel extends Model {
 
-    public function getDestinos(){
+    public function getDestinos() {
         $pdo = $this->crearConexion();
         $sql = "select * from viajes order by fecha ASC";
         $query = $pdo->prepare($sql);
@@ -12,9 +13,9 @@ class ViajesModel extends Model {
         return $destinos;
     }
 
-    public function crearviaje($destino, $fecha, $horario, $pasajeros, $vehiculo, $info){
+    public function crearviaje($destino, $fecha, $horario, $pasajeros, $vehiculo, $info) {
         $pdo = $this->crearConexion();
-        $sql = 'INSERT INTO viajes (destino, fecha, horario, pasajeros, fk_vehiculo, descripcion) 
+        $sql = 'INSERT INTO viajes (destino, fecha, horario, pasajeros, fk_vehiculo, descripcion)
                 VALUES (?,?,?,?,?,?)';
         $query = $pdo->prepare($sql);
         try {
@@ -24,7 +25,7 @@ class ViajesModel extends Model {
         }
     }
 
-    public function deleteDestinoById($id_destino){
+    public function deleteDestinoById($id_destino) {
         $pdo = $this->crearConexion();
         $sql = 'DELETE FROM viajes
                 WHERE id = ?';
@@ -36,7 +37,7 @@ class ViajesModel extends Model {
         }
     }
 
-    public function getViajeById($id_destino){
+    public function getViajeById($id_destino) {
         $pdo = $this->crearConexion();
         $sql = "SELECT * FROM viajes WHERE id = ?";
         $query = $pdo->prepare($sql);
@@ -45,14 +46,13 @@ class ViajesModel extends Model {
         return $viaje;
     }
 
-    public function updateViaje($destino, $fecha, $horario, $pasajeros, $vehiculo, $info, $id){
+    public function updateViaje($destino, $fecha, $horario, $pasajeros, $vehiculo, $info, $id) {
         $pdo = $this->crearConexion();
-        $sql = 'UPDATE viajes SET destino = ?, fecha = ?, horario = ?, pasajeros = ?, fk_vehiculo = ?, descripcion = ? 
+        $sql = 'UPDATE viajes SET destino = ?, fecha = ?, horario = ?, pasajeros = ?, fk_vehiculo = ?, descripcion = ?
                 WHERE id = ?';
         $query = $pdo->prepare($sql);
         try {
             $query->execute([$destino, $fecha, $horario, $pasajeros, $vehiculo, $info, $id]);
-            
         } catch (\Throwable $th) {
             return null;
         }

@@ -1,11 +1,12 @@
 <?php
+
 require_once 'libs/smarty/libs/Smarty.class.php';
 
 class ViajesView {
 
     private $smarty;
     
-    public function __construct(){
+    public function __construct() {
         $this->smarty = new Smarty\Smarty();
         $this->smarty->assign('base', BASE_URL);
     }
@@ -16,13 +17,13 @@ class ViajesView {
         $this->smarty->display('home.tpl');
     }
 
-    public function showFormViaje($vehiculos, $userLogged){
+    public function showFormViaje($vehiculos, $userLogged) {
         $this->smarty->assign('userLogged', $userLogged);
         $this->smarty->assign('vehiculos', $vehiculos);
         $this->smarty->display('formViajes.tpl');
     }
     
-    public function formEdicionViaje($viaje, $vehiculo,  $vehiculos, $userLogged){
+    public function formEdicionViaje($viaje, $vehiculo, $vehiculos, $userLogged) {
         $this->smarty->assign('userLogged', $userLogged);
         $this->smarty->assign('viaje', $viaje);
         $this->smarty->assign('vehiculo', $vehiculo);

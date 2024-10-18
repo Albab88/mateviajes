@@ -1,7 +1,8 @@
 <?php
-    require_once 'app/controllers/viajes.controller.php';
-    require_once 'app/controllers/vehiculos.controller.php';
-    require_once 'app/controllers/usuarios.controller.php';
+
+require_once 'app/controllers/viajes.controller.php';
+require_once 'app/controllers/vehiculos.controller.php';
+require_once 'app/controllers/usuarios.controller.php';
 
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
@@ -18,10 +19,9 @@ $vehiculoscontroller = new VehiculosController();
 $usuarioscontroller = new UsuariosController();
 
 switch ($params[0]) {
-
     case 'home':
         $viajescontroller->LoadIndex();
-        break;
+    break;
 
     case 'vehiculos':
         $vehiculoscontroller->showFlota();
@@ -37,7 +37,7 @@ switch ($params[0]) {
 
     case 'logOut':
         $usuarioscontroller->logOut();
-        break;
+    break;
 
     case 'nuevovehiculo':
         $vehiculoscontroller->formVehiculo();
@@ -72,18 +72,18 @@ switch ($params[0]) {
     case 'eliminarViaje':
         $id_destino = $params[1];
         $viajescontroller->borrarDestino($id_destino);
-        break;
+    break;
 
     case 'formEditViaje':
         $id_destino = $params[1];
         $viajescontroller->editarDestino($id_destino);
-        break;
+    break;
     
     case 'modificarViaje':
-            $viajescontroller->modificarViaje();
-        break;
+        $viajescontroller->modificarViaje();
+    break;
     
     default:
         ?><img src="img/404.jpg" alt="..."><?php
-        break;
+    break;
 }

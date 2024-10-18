@@ -1,25 +1,25 @@
 <?php
+
 require_once('config/config.php');
 
-//Crea la conexión a la DB
-
-class Model{
+class Model {
 
     protected $db;
     
     public function __construct() {
+        
         global $configuracion;
-
-            $user = $configuracion['usuario'];
-            $password = $configuracion['password'];
-            $database = $configuracion['basenombre'];
-            $host = $configuracion['host'];
+        
+        $user = $configuracion['usuario'];
+        $password = $configuracion['password'];
+        $database = $configuracion['basenombre'];
+        $host = $configuracion['host'];
         $this->db = new PDO(
         "mysql:host=$host;dbname=$database;charset=utf8",$user,$password);
         $this->deploy();
     }
 
-    protected function crearConexion () {
+    protected function crearConexion() {
             
         global $configuracion;
 
@@ -27,7 +27,6 @@ class Model{
         $password = $configuracion['password'];
         $database = $configuracion['basenombre'];
         $host = $configuracion['host'];
-        
         try {
             $pdo = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $user, $password);
         } catch (\Throwable $th) {
@@ -40,7 +39,6 @@ class Model{
         $query = $this->db->query('SHOW TABLES');
         $tables = $query->fetchAll();
         if (count($tables) == 0) {
-            
             $hashed_password = '$2y$10$fOmfNDoBopb2.lQpbRmFLOIY5wMR.zoWNl154xeCtZkue4s4es2sq';
             
             $sql = "

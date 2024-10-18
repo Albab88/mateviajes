@@ -3,7 +3,6 @@
 {if $userLogged}
 <h2 class="text-center">Agregar nuevo viaje</h2>
 <div class="row d-flex justify-content-center bg-light text-success">
-
     <form action="agregarviaje" method="POST" class="my-4 fw-bold" style="width: 18rem;">
         <div class="mb-3">
             <label for="destino" class="form-label">Destino</label>
@@ -50,8 +49,7 @@
             </div>
         <div class= "mb-3">
             <label for="lugares" class="form-label">Asientos</label>
-            <input type="number" name="lugares" class="form-control" value=""
-                />
+            <input type="number" name="lugares" class="form-control" value=""/>
         </div>
         <div class="mb-3">
             <label for="datos" class="form-label">Info extra</label>
@@ -65,4 +63,5 @@
 {else}
     <h4 class="alert alert-info">No tienes permiso para acceder a esta página.</h4>
 {/if}
+
 {include file="footer.tpl"}

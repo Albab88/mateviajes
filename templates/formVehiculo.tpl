@@ -3,13 +3,10 @@
 {if $userLogged}
 <h2 class="text-center">Agregar nuevo vehículo</h2>
 <div class="row d-flex justify-content-center bg-light text-success">
-
     <form action="agregarvehiculo" method="POST" class="my-4 fw-bold" style="width: 18rem;">
-        
         <div class="mb-3">
             <label for="marca" class="form-label">Marca</label>
-            <input type="text" name="marca" id="disabledTextInput" class="form-control" value=""
-                mrequired />
+            <input type="text" name="marca" id="disabledTextInput" class="form-control" value="" required />
         </div>
         <div class="mb-3">
             <label for="modelo" class="form-label">Modelo</label>
@@ -35,4 +32,5 @@
 {else}
     <h4 class="alert alert-info">No tienes permiso para acceder a esta página.</h4>
 {/if}
+
 {include file="footer.tpl"}

@@ -1,12 +1,12 @@
 <?php
+
 require_once 'libs/smarty/libs/Smarty.class.php';
-require_once 'app/controllers/usuarios.controller.php';
 
 class VehiculosView {
 
-        private $smarty;
+    private $smarty;
     
-    public function __construct(){
+    public function __construct() {
         $this->smarty = new Smarty\Smarty();
         $this->smarty->assign('base', BASE_URL);
     }
@@ -17,15 +17,14 @@ class VehiculosView {
         $this->smarty->display('flota.tpl');
     }
 
-    public function showFormVehiculo($userLogged){
+    public function showFormVehiculo($userLogged) {
         $this->smarty->assign('userLogged', $userLogged);
-    $this->smarty->display('formVehiculo.tpl');
+        $this->smarty->display('formVehiculo.tpl');
     }
 
-    public function formEdicionVehiculo($vehiculo, $userLogged){
+    public function formEdicionVehiculo($vehiculo, $userLogged) {
         $this->smarty->assign('userLogged', $userLogged);
         $this->smarty->assign('vehiculo', $vehiculo);
         $this->smarty->display('formEditVehiculo.tpl');
     }
-
 }

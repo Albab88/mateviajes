@@ -3,7 +3,6 @@
 {if $userLogged}
 <h2 class="text-center">Modificar viaje a {$viaje->destino} el {$viaje->fecha|date_format:"%d-%m-%Y"}</h2> 
 <div class="row d-flex justify-content-center bg-light text-success">
-
     <form action="modificarViaje" method="POST" class="my-4 fw-bold" style="width: 18rem;">
         <div class="mb-3">
             <input type="text" name="id" id="disabledTextInput" class="form-control" value="{$viaje->id}"
@@ -36,12 +35,11 @@
         </div>
         <div class="mb-3">
             <label for="vehiculo" class="form-label">Vehículo</label>
-            
             <select name="vehiculo" id="disabledSelect" class="form-select" required>
-            <option value="{$vehiculo->id}">{$vehiculo->marca} {$vehiculo->modelo} - {$vehiculo->asientos} lugares</option>
-            {foreach $vehiculos as $vehiculo}
                 <option value="{$vehiculo->id}">{$vehiculo->marca} {$vehiculo->modelo} - {$vehiculo->asientos} lugares</option>
-            {/foreach}
+                {foreach $vehiculos as $vehiculo}
+                    <option value="{$vehiculo->id}">{$vehiculo->marca} {$vehiculo->modelo} - {$vehiculo->asientos} lugares</option>
+                {/foreach}
             </select>
         </div>
         <div class="mb-3">
@@ -55,13 +53,11 @@
             </div>
         <div class= "mb-3">
             <label for="lugares" class="form-label">Asientos</label>
-            <input type="number" name="lugares" class="form-control" value="{$viaje->pasajeros}"
-                />
+            <input type="number" name="lugares" class="form-control" value="{$viaje->pasajeros}"/>
         </div>
         <div class= "mb-3">
             <label for="datos" class="form-label">Info extra</label>
-            <input type="text" name="datos" class="form-control" value="{$viaje->descripcion}"
-                />
+            <input type="text" name="datos" class="form-control" value="{$viaje->descripcion}"/>
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
             <button type="submit" class="btn btn-outline-danger">Actualizar</button>
@@ -71,6 +67,5 @@
 {else}
     <h4 class="alert alert-info">No tienes permiso para acceder a esta página.</h4>
 {/if}
-
 
 {include file="footer.tpl"}

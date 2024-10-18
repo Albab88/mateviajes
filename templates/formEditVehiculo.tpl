@@ -3,17 +3,13 @@
 {if $userLogged}
 <h2 class="text-center">Actualizar datos de {$vehiculo->marca} {$vehiculo->modelo} patente {$vehiculo->patente}</h2>
 <div class="row d-flex justify-content-center bg-light text-success">
-
     <form action="editarVehiculo" method="POST" class="my-4 fw-bold text-center" style="width: 18rem;">
-        
         <div class="hidden">
-            
-            <input type="text" name="id" id="disabledTextInput" class="form-control" value="{$vehiculo->id}"
-                hidden />
+            <input type="text" name="id" id="disabledTextInput" class="form-control" value="{$vehiculo->id}" hidden />
+        </div>
         <div class="mb-3">
             <label for="marca" class="form-label">Marca</label>
-            <input type="text" name="marca" id="disabledTextInput" class="form-control" value="{$vehiculo->marca}"
-                mrequired />
+            <input type="text" name="marca" id="disabledTextInput" class="form-control" value="{$vehiculo->marca}" required />
         </div>
         <div class="mb-3">
             <label for="modelo" class="form-label">Modelo</label>
